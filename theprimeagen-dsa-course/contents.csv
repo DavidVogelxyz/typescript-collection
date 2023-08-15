@@ -4,3 +4,6 @@ INDEX,DATE,NAME
 3,2023-08-14,BinarySearchList.ts
 4,2023-08-14,TwoCrystalBalls.ts
 5,2023-08-14,BubbleSort.ts
+6,2023-08-15,Queue.ts
+7,2023-08-15,Stack.ts
+8,2023-08-15,MazeSolver.ts
