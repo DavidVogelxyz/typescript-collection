@@ -12,3 +12,7 @@ INDEX,DATE,NAME
 11,2023-08-16,BTPreOrder.ts
 12,2023-08-16,BTInOrder.ts
 13,2023-08-16,BTPostOrder.ts
+14,2023-08-17,BTBFS.ts
+15,2023-08-17,CompareBinaryTrees.ts
+16,2023-08-17,DFSonBST.ts
+17,2023-08-17,MinHeap.ts
