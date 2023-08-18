@@ -16,3 +16,7 @@ INDEX,DATE,NAME
 15,2023-08-17,CompareBinaryTrees.ts
 16,2023-08-17,DFSonBST.ts
 17,2023-08-17,MinHeap.ts
+18,2023-08-18,BFSGraphMatrix.ts
+19,2023-08-18,DFSGraphList.ts
+20,2023-08-18,DijkstraList.ts
+21,2023-08-18,LRU.ts
