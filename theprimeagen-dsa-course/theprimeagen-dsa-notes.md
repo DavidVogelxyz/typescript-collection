@@ -1,14 +1,49 @@
 # Primeagen's Algorithms course
-## Updated: 2023 August 14, Monday
 
-### Big O time complexity
+Started the course on 2023 August 14, Monday. Finished the course on 2023 August 18, Friday.
+
+## Table of contents
+
+- [Big O time complexity](#big-o-time-complexity)
+- [Data structure - arrays](#data-structure-arrays)
+- [Linear Search and kata setup](#linear-search-and-kata-setup)
+- [Binary Search Algorithm](#binary-search-algorithm)
+- [Two Crystal Balls problem](#two-crystal-balls-problem)
+- [Bubble Sort](#bubble-sort)
+- [BRAND NEW DATA STRUCTURE ALERT](#brand-new-data-structure-alert)
+- [Queue](#queue)
+- [Stack](#stack)
+- [Arrays vs linked lists](#arrays-vs-linked-lists)
+- [ArrayList](#arraylist)
+- [Array buffers](#array-buffers)
+- [Recursion](#recursion)
+- [Quicksort](#quicksort)
+- [No more lists!](#no-more-lists!)
+- [TREES](#trees)
+- [Tree traversal](#tree-traversal)
+    - [Depth First Traversal](#depth-first-traversal)
+    - [Breadth First Traversal](#breadth-first-traversal)
+- [Binary Search Tree](#binary-search-tree)
+- [Heap](#heap)
+    - [MinHeap](#minheap)
+    - [MaxHeap](#maxheap)
+- [Retrieval tree](#retrieval-tree)
+- [GRAPHS](#graphs)
+- [Dijkstra's shortest path](#dijkstras-shortest-path)
+- [MAPS](#maps)
+- [LRUs](#lrus)
+
+## Big O time complexity
+
 Big O
 : aka "runtime"
 - algo resource utilization in terms of data INPUT into function
 - "O of N" is a linear relationship based on input
 - growth with respect to input
 
-#### example:
+Example:
+
+```
 function sum_char_codes(n: string): number {
 	let sum = 0;
 	for (let i = 0; i < n.length; ++i) {
@@ -17,13 +52,16 @@ function sum_char_codes(n: string): number {
 
 	return sum;
 }
+```
 
 - wut?
 - this is _______?
 	- answer: "O of N"
 	- Primeagen says "look for the loops; understand their behavior"
 
-#### next example:
+Next example:
+
+```
 function sum_char_codes(n: string): number {
 	let sum = 0;
 	for (let i = 0; i < n.length; ++i) {
@@ -36,6 +74,7 @@ function sum_char_codes(n: string): number {
 
 	return sum;
 }
+```
 
 - this is _______?
 	- answer: "O of N"
@@ -45,7 +84,8 @@ function sum_char_codes(n: string): number {
 		- any coefficient multiplied by N, is N
 		- HOWEVER, N^2 > N
 
-#### least operations to most:
+### Least operations to most:
+
 - O(1) - linear
 	- constant
 	- no slople
@@ -56,8 +96,8 @@ function sum_char_codes(n: string): number {
 - O(2^n) - approaches infinity
 - O(n!) - approaches infinity
 
+### Let's put it another way:
 
-#### let's put it another way:
 - O of N
 	- when 'n' is a 'for' loop that goes through every character in the string
 		- for (let i = 0; i < n.length; ++i) { sum += n.charCodeAt(i);}
@@ -78,7 +118,7 @@ function sum_char_codes(n: string): number {
 - O(log(n))
 	- binary search tree
 
-### data structure - arrays
+## Data structure - arrays
 
 is `const a = []` an array?
 - I said no. most said yes.
@@ -92,7 +132,6 @@ array
 
 buffer
 :
-
 
 HOLD UP
 - Zero bytes = 1 bit = 2 possibilities (2^1)
@@ -142,7 +181,7 @@ big O of getting data out of an array
 
 nice!
 
-### linear search and kata setup
+## Linear Search and kata setup
 
 remember free body diagrams (FBDs) from physics
 
@@ -153,7 +192,7 @@ starting with the most simple problem of data:
 - we have some data, and we want to find data in it
 - a search function
 
-#### linear search
+### Linear search
 
 find a needle in a haystack
 
@@ -179,7 +218,7 @@ vim $(yarn -s day) # or navigate to day1 folder
 
 Primeagen suggests NOT returning inside loops
 
-### Binary Search Algorithm
+## Binary Search Algorithm
 
 is it ordered?
 - if it is, there are advantages (& disadvantages)
@@ -202,7 +241,7 @@ return false // -1
 
 [lo,hi)
 
-### two crystal balls problem
+## Two Crystal Balls problem
 
 two balls, can't break infinite
 
@@ -216,7 +255,7 @@ the faster way involves using the first one as a signal of breakage
 		- that would make the problem O(sqrt(N))
 			- aka O(log(N))
 
-### bubble sort
+## Bubble Sort
 
 what is the mathemathical representation of, "I know this array is sorted?"
 
@@ -240,7 +279,7 @@ simple bubble sort algo:
 
 sorted!
 
-#### what is the runtime (Big O)?
+### What is the runtime (Big O)?
 
 the pattern:
 - first iteration is 'n' ops
@@ -266,7 +305,7 @@ the runtime is O(n^2 + n)
 
 therefore, it's O(n^2)
 
-### implementing bubble sort
+### Implementing bubble sort
 
 [			]
 0			n
@@ -288,7 +327,7 @@ j + 1 now equals temp (8)
 
 EOF
 
-### BRAND NEW DATA STRUCTURE ALERT:
+## BRAND NEW DATA STRUCTURE ALERT
 
 `const a = []` is **NOT** an array
 - so, what is this?
@@ -337,7 +376,9 @@ return C.value
 **Linked lists are awesome and foundational**
 - all linked lists are graphs, aka all linked lists are trees
 
-### queue (FIFO)
+## Queue
+
+aka FIFO
 
 a queue is a specific implementation of a linked list
 - add to tail & remove from head
@@ -345,14 +386,16 @@ a queue is a specific implementation of a linked list
 
 what's the opposite of a queue?
 
-### stack (LIFO)
+## Stack
+
+aka LIFO
 
 the opposite of a queue is a stack!
 - add to head, instead of tail
 	- remove from tail
 - push, pop, & peek
 
-### arrays vs linked lists
+## Arrays vs linked lists
 
 when to use one vs the other
 
@@ -375,7 +418,7 @@ arrays are better for lookups or random access
 is it possible to get speed of array with the benefits of a linked list?
 - yes (?!)
 
-### ArrayList
+## ArrayList
 
 am I wrong to think that you're just linking a bunch of arrays?
 
@@ -436,11 +479,11 @@ PRIME JUST SAID (in interviews, as interviewer) he cares less whether you can im
 - cares more if you understand fundamentally what's going on, because it's going to impact how you implement ANYTHING
 - you can always learn a new language, harder to learn a new perspective through which to view everything
 
-### array buffers
+## Array buffers
 
 aka ring buffers
 
-### to round out this LIST section
+### To round out this LIST section
 
 `const a = []`
 
@@ -450,7 +493,7 @@ I think it's an arraylist with no data
 
 slice = memcopy
 
-### recursion
+## Recursion
 
 when using recursion as a tool
 1. start with a SOLID BASE CASE
@@ -477,7 +520,7 @@ always use a simple for loop when you can
 
 recursion is for situations where a simple for loop won't work
 
-### quicksort
+## Quicksort
 
 a version of 'divide and conquer'
 
@@ -493,7 +536,7 @@ reminiscent of binary search
 runtime:
 o(n(log(n)))
 
-### no more lists!
+## No more lists!
 
 trees, in some sense, are lists
 
@@ -501,11 +544,11 @@ we're not really done, but we're kinda done
 
 all programming eventually leads to trees
 
-### time to implement the linked lists
+### Time to implement the linked lists
 
-#### Doubly Linked List
+### Doubly Linked List
 
-### TREES
+## TREES
 
 starts from a single point, and then goes on down
 
@@ -523,7 +566,7 @@ height:
 start at root
 longest chain from root to the farthest away child
 
-#### definitions
+### Definitions
 
 root
 : most parent node
@@ -549,18 +592,20 @@ balanced
 branching factor
 : the amount of children a tree has
 
-### tree traversal
+## Tree Traversal
 
 going to want to use recursion
 - which means, we need to create a good base case
 
-#### depth first traversal
+### Depth First Traversal
 
-		1
+```
+                1
       I---------I---------I
-      2			  3
+      2                   3
 I-----I-----I       I-----I-----I
-4	    5	    6		7
+4           5       6           7
+```
 
 visitNode()
 
@@ -589,11 +634,14 @@ post order traversal
 
 post order traversal SHAPE
 - left to right through children, then up one directory
+
+```
   root
      \
  x    ^
  \     \
 >->  >-->
+```
 
 what is the runtime?
 - remember: it depends on the input
@@ -649,13 +697,15 @@ these three traversals are known as depth-first traversals
 				- which is a linked list!
 	- the most correct answer was **stack**
 
-#### Breadth first traversal
+### Breadth First Traversal
 
-		1
+```
+                1
       I---------I---------I
-      2			  3
+      2                   3
 I-----I-----I       I-----I-----I
-4	    5	    6		7
+4           5       6           7
+```
 
 breadth first
 - also a linked list, but a **queue** instead of a stack
@@ -697,16 +747,16 @@ Primeagen is not sure that it's possible to do a recursive BFS
 remember: breadth first does not preserve the shape of the traversal
 - but, depth first does preserve the shape of the traversal
 
-### binary search tree (BST)
+## Binary Search Tree
 
-#### depth-first
+### Depth-first
 
 looks a lot like quicksort
 - with pivots and splitting, etc
 
 this is a simplified version of a binary search on an array
 
-#### depth-first find:
+### Depth-first find:
 
 find(n, v): boolean
 if !n
@@ -729,13 +779,13 @@ what is the runtime?
 			- for a complete binary tree, h is log(n)
 	- ranges depending on balance
 
-#### depth-first insert:
+### Depth-first insert:
 
 if node.v < value
 	if !node.r
 	insertion
 
-#### depth-first delete:
+### Depth-first delete:
 
 case 1) no child
 - delete
@@ -749,7 +799,7 @@ smallest on large side
 or
 largest on small side
 
-### heap
+## Heap
 
 aka a priority queue(?)
 
@@ -764,7 +814,7 @@ heap
 	- ordered, but not perfectly ordered
 	- there *are* rules to be followed
 
-#### MinHeap
+### MinHeap
 
 MinHeap
 - the root value must be the smallest value
@@ -792,7 +842,7 @@ parent can be found with:
 	- in javascript (ts), we're going to need to do a floor operation
 		- floor out the value to get the parent
 
-#### MaxHeap
+### MaxHeap
 
 MaxHeap
 - the root value must be the largest value
@@ -800,7 +850,6 @@ MaxHeap
 heapify up
 - start at length of array
 	- we already know length of array!
-
 
 what is the runtime of a heap?
 - it's an array, and it's just doing lookup and swap
@@ -810,7 +859,7 @@ what is the runtime of a heap?
 	- because:
 		- this is a complete and full tree at all points, and you don't need to traverse the whole tree, even in a worst case situation
 
-### retrieval tree
+## Retrieval tree
 
 synonymous with autocomplete
 - also, caching
@@ -822,7 +871,7 @@ O(1)
 		- technically the height of the tree
 			- so, techinically O(H)
 
-### GRAPHS
+## GRAPHS
 
 arguably the hardest, largest, and most difficult part of algorithms
 
@@ -833,7 +882,7 @@ Euler
 - 7 bridges problem
 	- principle: if there is an odd number of connections into any node, it's impossible to do the traversal
 
-#### graph terminology
+### Graph terminology
 
 cycle
 : start at Node(x), follow links, end back at Node(x)
@@ -871,15 +920,15 @@ node
 edge
 : a point betwixt two nodes
 
-#### searching an adjacency matrix
+### Searching an adjacency matrix
 
 ---
 
-### Dijkstra's shortest path
+## Dijkstra's shortest path
 
 what is the runtime?
 
-### MAPS
+## MAPS
 
 load factor
 : divide "data points" by amount of storage (data.len / storage.capacity)
@@ -895,7 +944,7 @@ collision
 
 NB: maps are **array-lists**!!
 
-### LRUs
+## LRUs
 
 Least Recently Used
 
@@ -912,7 +961,8 @@ two generics in a hash map
 - key
 - value
 
-#### LRU caching
+### LRU caching
+
 using / inserting an item = 7x O(1) operations
 - take any mapped item:
 	- change to undefined, both the prev (1) and next (2)
@@ -928,8 +978,4 @@ deleting / removing an item from the tail = operations
 - break link on old tail to new tail
 - break link on new tail from old tail
 
-
-
-
-
-fin
+### fin!
